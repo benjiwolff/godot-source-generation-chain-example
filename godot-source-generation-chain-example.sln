@@ -1,0 +1,27 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "godot-source-generation-chain-example", "godot-source-generation-chain-example.csproj", "{C56909ED-07B2-46B0-A320-0E69C6266A44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "godot-source-generation-chain-example.SourceGeneration", "godot-source-generation-chain-example.SourceGeneration\godot-source-generation-chain-example.SourceGeneration.csproj", "{CEEE3AFA-93D8-455E-A47D-E4AB5FBE6901}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C56909ED-07B2-46B0-A320-0E69C6266A44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C56909ED-07B2-46B0-A320-0E69C6266A44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C56909ED-07B2-46B0-A320-0E69C6266A44}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{C56909ED-07B2-46B0-A320-0E69C6266A44}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{C56909ED-07B2-46B0-A320-0E69C6266A44}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{C56909ED-07B2-46B0-A320-0E69C6266A44}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{CEEE3AFA-93D8-455E-A47D-E4AB5FBE6901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEEE3AFA-93D8-455E-A47D-E4AB5FBE6901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEEE3AFA-93D8-455E-A47D-E4AB5FBE6901}.ExportDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEEE3AFA-93D8-455E-A47D-E4AB5FBE6901}.ExportDebug|Any CPU.Build.0 = Debug|Any CPU
+		{CEEE3AFA-93D8-455E-A47D-E4AB5FBE6901}.ExportRelease|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEEE3AFA-93D8-455E-A47D-E4AB5FBE6901}.ExportRelease|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+EndGlobal
