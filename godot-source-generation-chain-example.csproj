@@ -3,6 +3,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>godotsourcegenerationchainexample</RootNamespace>
+    <DisableImplicitGodotGeneratorReferences>true</DisableImplicitGodotGeneratorReferences>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Beb.GodotGeneric" Version="1.0.0"/>
