@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 using System.Threading;
-using Godot.SourceGenerators.Implementations;
+using Godot.SourceGenerators.Implementation;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
