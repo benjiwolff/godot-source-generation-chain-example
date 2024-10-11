@@ -6,7 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Godot.SourceGenerators.Implementation" Version="4.4.0-dev3" GeneratePathProperty="true" />
+        <PackageReference Include="Godot.SourceGenerators.Implementation" Version="4.4.0-dev4" GeneratePathProperty="true" />
         <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
