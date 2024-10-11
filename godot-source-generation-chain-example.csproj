@@ -20,8 +20,5 @@
   <ItemGroup>
     <EmbeddedResource Remove="godot-source-generation-chain-example.SourceGeneration\**" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include=".gitignore" />
-  </ItemGroup>
 
 </Project>
