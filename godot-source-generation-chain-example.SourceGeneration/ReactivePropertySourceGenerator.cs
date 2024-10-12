@@ -67,7 +67,13 @@ namespace zombie_shooter.SourceGeneration
 
             var newCompilation = context.Compilation.AddSyntaxTrees(newSyntaxTrees);
             var newContext = new GeneratorExecutionContextWithNewCompilation(context, newCompilation);
-            GeneratorInvoker.RunAll(newContext, CancellationToken.None);
+            Parallel.Invoke(
+                new ParallelOptions
+                {
+                    MaxDegreeOfParallelism = Environment.ProcessorCount - 1,
+                    CancellationToken = context.CancellationToken
+                },
+                GodotGenerators.GetConstructors().Select(c => (Action)(() => c().Execute(newContext))).ToArray());
         }
 
         private void GenerateProperty(FieldDeclarationSyntax fieldDeclaration, ref StringBuilder builder)
