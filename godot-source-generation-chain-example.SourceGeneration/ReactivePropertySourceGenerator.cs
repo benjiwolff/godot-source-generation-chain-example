@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
-using System.Threading;
+using System.Threading.Tasks;
 using Godot.SourceGenerators.Implementation;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -18,6 +20,10 @@ namespace zombie_shooter.SourceGeneration
         {
         }
 
+        [SuppressMessage(
+            "MicrosoftCodeAnalysisCorrectness",
+            "RS1035:Do not use APIs banned for analyzers",
+            Justification = "My source generator, my rules")]
         public void Execute(GeneratorExecutionContext context)
         {
             var attributeSymbol = typeof(ExportReactiveAttribute).Name;
@@ -32,10 +38,10 @@ namespace zombie_shooter.SourceGeneration
                     .Where(
                         f => f.AttributeLists.SelectMany(al => al.Attributes)
                             .Any(
-                                a => semanticModel.GetTypeInfo(a).Type.Name ==
+                                a => semanticModel.GetTypeInfo(a).Type!.Name ==
                                      attributeSymbol)).ToArray();
 
-                var relatedClass = (ClassDeclarationSyntax?)fields.FirstOrDefault()?.Parent;
+                var relatedClass = (ClassDeclarationSyntax)fields.FirstOrDefault()?.Parent;
                 if (relatedClass is null)
                 {
                     continue;
@@ -93,7 +99,7 @@ namespace zombie_shooter.SourceGeneration
                 @"using System;
 using Godot;
 
-namespace " + semanticModel.GetDeclaredSymbol(relatedClass).ContainingNamespace + @"
+namespace " + semanticModel.GetDeclaredSymbol(relatedClass)!.ContainingNamespace + @"
 {
     public partial class " + relatedClass.Identifier.ValueText + @"
     {");
