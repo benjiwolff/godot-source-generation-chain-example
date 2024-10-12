@@ -66,7 +66,7 @@ namespace zombie_shooter.SourceGeneration
             }
 
             var newCompilation = context.Compilation.AddSyntaxTrees(newSyntaxTrees);
-            var newContext = new GeneratorExecutionContextWithNewCompilation(context, newCompilation);
+            var newContext = new GeneratorExecutionContextWithNewCompilation(context, newCompilation, newSyntaxTrees);
             Parallel.Invoke(
                 new ParallelOptions
                 {
