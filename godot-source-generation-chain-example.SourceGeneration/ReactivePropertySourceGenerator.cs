@@ -20,10 +20,6 @@ namespace zombie_shooter.SourceGeneration
         {
         }
 
-        [SuppressMessage(
-            "MicrosoftCodeAnalysisCorrectness",
-            "RS1035:Do not use APIs banned for analyzers",
-            Justification = "My source generator, my rules")]
         public void Execute(GeneratorExecutionContext context)
         {
             var attributeSymbol = typeof(ExportReactiveAttribute).Name;
