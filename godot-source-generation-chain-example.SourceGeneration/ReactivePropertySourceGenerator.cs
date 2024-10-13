@@ -67,13 +67,12 @@ namespace zombie_shooter.SourceGeneration
 
             var newCompilation = context.Compilation.AddSyntaxTrees(newSyntaxTrees);
             var newContext = new GeneratorExecutionContextWithNewCompilation(context, newCompilation, newSyntaxTrees);
-            Parallel.Invoke(
-                new ParallelOptions
-                {
-                    MaxDegreeOfParallelism = Environment.ProcessorCount - 1,
-                    CancellationToken = context.CancellationToken
-                },
-                GodotGenerators.GetConstructors().Select(c => (Action)(() => c().Execute(newContext))).ToArray());
+
+            // Running these generators in parallel can cause very cryptic exceptions, be warned.
+            foreach (var generator in GodotGenerators.GetConstructors().Select(c => c()))
+            {
+                generator.Execute(newContext);
+            }
         }
 
         private void GenerateProperty(FieldDeclarationSyntax fieldDeclaration, ref StringBuilder builder)
